@@ -15,3 +15,22 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ]
+
+const galleryEl = document.querySelector('#gallery')
+console.log(galleryEl)
+galleryEl.classList.add('gallery')
+
+// const arrayOfGalleryMarkup = []
+
+// for (const image of images) {
+//   const galleryMarkup = `<li><img ${image.url} ${image.alt}></li>`
+//   arrayOfGalleryMarkup.push(galleryMarkup)
+// }
+// console.log(arrayOfGalleryMarkup)
+// galleryEl.insertAdjacentHTML('afterbegin', arrayOfGalleryMarkup.join(' '))
+
+const galleryMarkup = images.map(
+  (image) => `<li class=list><img class=item ${image.url} ${image.alt}></li>`,
+)
+
+galleryEl.insertAdjacentHTML('afterbegin', galleryMarkup.join(''))
